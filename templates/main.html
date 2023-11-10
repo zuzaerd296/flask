@@ -1,0 +1,38 @@
+<html>
+
+<head>
+</head>
+
+<body>
+    <h1>WITAM UZYTKOWNIKU</h1>
+    
+    <h1>
+        Books
+    </h1>
+    <table>
+        <thead>
+           <td>Title</td>
+           <td>Author</td>
+        </thead>
+        
+        {% for book in books %}
+           <tr>
+              <td>{{book[0]}}</td>
+              <td>{{book[1]}}</td>
+           </tr>
+        {% endfor %}
+     </table>
+
+    <h1>
+        Add book
+    </h1>
+    <form method=post action="/add-book">
+        Title: <input type=text name=title>
+        Author: <input type=text name=author>
+        <input type=submit>
+    </form>
+
+    <a href=/logout>Logout</a>
+</body>
+
+</html>
